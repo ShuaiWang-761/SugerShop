@@ -97,7 +97,15 @@
     <el-main> <el-button @click="visible = true">按钮</el-button>
     <el-dialog :visible.sync="visible" title="Hello world">
       <p>欢迎来到茹月的网上店铺!</p>
-    </el-dialog></el-main>
+    </el-dialog>
+      <div class="demo-image__preview">
+  <el-image 
+    style="width: 100px; height: 100px"
+    :src="url" 
+    :preview-src-list="srcList">
+  </el-image>
+</div>
+      </el-main>
   </el-container>
 </el-container>
    
@@ -111,7 +119,14 @@
     new Vue({
       el: '#app',
       data: function() {
-        return { visible: false }
+        return {
+            visible: false,
+                url: 'https://shuaiwang-761.github.io/SugerShop/Suger.png',
+        srcList: [
+          'https://shuaiwang-761.github.io/SugerShop/Suger.png',
+             'https://shuaiwang-761.github.io/SugerShop/Suger.png'
+        ]
+               }
       }
     })
   </script>
